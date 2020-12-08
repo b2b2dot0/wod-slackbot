@@ -1,5 +1,5 @@
 task :environment do
-  ENV['SLACK_API_TOKEN'] = File.read('config/.token').chomp
+  #ENV['SLACK_API_TOKEN'] = File.read('config/.token').chomp
 end
 
 desc 'start a console session in pry'
@@ -20,6 +20,7 @@ namespace :deploy do
 
   desc 'puts the token to the console'
   task :saytoken => :environment do
-    puts File.read 'config/.token'
+    #puts File.read 'config/.token'
+    puts ENV['SLACK_API_TOKEN']
   end
 end
